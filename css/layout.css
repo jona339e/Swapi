@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* font-family: 'SF Distant Galaxy', sans-serif; */
+    /* font-family: 'SF Distant Galaxy AltOutline', sans-serif; */
+    /* font-family: 'SF Distant Galaxy Alternate', sans-serif; */
+    /* font-family: 'SF Distant Galaxy Outline', sans-serif; */
+    /* font-family: 'SF Distant Galaxy Symbols', sans-serif; */
+    font-size: larger;
+
+}
+
+
+.wrapper {
+    background-image: url(../img/vincenzo-malagoli-flfhAlEwDq4-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    cursor: url(../img/m_cursor.png), auto;
+
+}
+
+.nav-bar {
+    position: sticky;
+    background-color: #000;
+    height: 10%;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.5rem;
+
+}
+
+.nav-bar > a{
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+    /* font-family: 'SF Distant Galaxy', sans-serif; */
+    font-family: 'SF Distant Galaxy AltOutline', sans-serif;
+    /* font-family: 'SF Distant Galaxy Alternate', sans-serif; */
+    /* font-family: 'SF Distant Galaxy Outline', sans-serif; */
+    /* font-family: 'SF Distant Galaxy Symbols', sans-serif; */
+
+
+}
+
+.nav-bar > a:hover{
+    color: yellow;
+    cursor: url(../img/m_cursor.png), auto;
+}
+
+.card-container {
+    margin: auto;
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.card {
+    padding: 10px;
+    border: 1px solid #000;
+    margin: 10px;
+    color: yellow;
+    box-shadow: 0px 0px 5px yellow;
+    background-color: rgba(0, 0, 0, .8);
+    border-radius: 10px;
+    word-wrap: break-word;
+    text-transform: capitalize;
+}
+
+.nav-bar > a.active {
+    color: yellow;
+    text-decoration: underline;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.btn-nav{
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #000;
+    background-color: rgba(0, 0, 0, .8);
+    color: yellow;
+    box-shadow: 0px 0px 5px yellow;
+    border-radius: 10px;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-family: 'SF Distant Galaxy AltOutline', sans-serif;
+    font-size: larger;
+}
+
+.btn-nav:hover{
+    background-color: yellow;
+    color: black;
+    cursor: url(../img/m_cursor.png);
+}
