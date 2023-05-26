@@ -11,6 +11,7 @@ body{
     /* font-family: 'SF Distant Galaxy Outline', sans-serif; */
     /* font-family: 'SF Distant Galaxy Symbols', sans-serif; */
     font-size: larger;
+    cursor: url(../img/m_cursor.png), auto;
 
 }
 
@@ -22,7 +23,6 @@ body{
     width: 100vw;
     height: 100vh;
     overflow: auto;
-    cursor: url(../img/m_cursor.png), auto;
 
 }
 
@@ -36,7 +36,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     font-size: 1.5rem;
-
+    
 }
 
 .nav-bar > a{
@@ -48,6 +48,7 @@ body{
     /* font-family: 'SF Distant Galaxy Alternate', sans-serif; */
     /* font-family: 'SF Distant Galaxy Outline', sans-serif; */
     /* font-family: 'SF Distant Galaxy Symbols', sans-serif; */
+    cursor: url(../img/m_cursor.png), auto; /* if this isn't here the cursor will quickly turn to default and then change again to lightsaber*/
 
 
 }
@@ -85,7 +86,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
 
 }
 .btn-nav{
@@ -105,5 +105,5 @@ body{
 .btn-nav:hover{
     background-color: yellow;
     color: black;
-    cursor: url(../img/m_cursor.png);
+    cursor: url(../img/m_cursor.png), auto;
 }
