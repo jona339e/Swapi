@@ -30,7 +30,7 @@ body{
     position: sticky;
     background-color: #000;
     height: 10%;
-    width: 100vw;
+    width: 100%;
     background-color: black;
     display: flex;
     justify-content: space-evenly;
@@ -65,7 +65,7 @@ body{
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-.card-container2{
+.card-container-details{
     margin: auto;
     max-width: 50%;
     display: flex;

@@ -4,7 +4,7 @@ const swapiApp = (async function () {
   const SWAPIURL = "https://swapi.dev/api";
   const navBar = document.querySelector("#nav-bar");
   const cardContainer = document.querySelector(".card-container");
-  const cardContainer2 = document.querySelector(".card-container2");
+  const cardcontainerdetails = document.querySelector(".card-container-details");
 
   const btnContainer = document.querySelector(".btn-container");
 
@@ -75,7 +75,7 @@ const swapiApp = (async function () {
     card.className = "single-card";
 
     for (let [k, v] of Object.entries(data)) {
-        if(v === null){
+        if(v == null){
             card.insertAdjacentHTML("beforeend",`<span class="key">${k.replaceAll("_"," ")}:</span> <span class="val">Undefined</span><br><hr>`);
             continue;
         }
@@ -88,13 +88,13 @@ const swapiApp = (async function () {
             `<li class="list-value">${v[i]}</li>`
           );
         }
-        card.insertAdjacentHTML("beforeend", `<hr><br>`);
+        card.insertAdjacentHTML("beforeend", `<br><span class="key">Number of ${k} ${v.length}</span><hr><br>`);
       } else {
         card.insertAdjacentHTML(
           "beforeend",`<span class="key">${k.replaceAll("_"," ")}:</span> <span class="val">${v}</span><br><hr>`);
       }
     }
-    cardContainer2.appendChild(card);
+    cardcontainerdetails.appendChild(card);
   }
 
   function showData(data) {
@@ -129,8 +129,8 @@ const swapiApp = (async function () {
     while (btnContainer.firstChild) {
       btnContainer.removeChild(btnContainer.firstChild);
     }
-    while (cardContainer2.firstChild) {
-      cardContainer2.removeChild(cardContainer2.firstChild);
+    while (cardcontainerdetails.firstChild) {
+      cardcontainerdetails.removeChild(cardcontainerdetails.firstChild);
     }
   }
 })();
