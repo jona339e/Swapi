@@ -74,27 +74,42 @@ const swapiApp = (async function () {
     let card = document.createElement("div");
     card.className = "single-card";
 
-    for (let [k, v] of Object.entries(data)) {
-        if(v == null){
-            card.insertAdjacentHTML("beforeend",`<span class="key">${k.replaceAll("_"," ")}:</span> <span class="val">Undefined</span><br><hr>`);
-            continue;
-        }
-      if (detailsIgnore.includes(k)) continue;
-      if (Array.isArray(v)) {
-        card.insertAdjacentHTML("beforeend", `<ul class="val">${k}</ul><br>`);
-        for (let i = 0; i < v.length; i++) {
-          card.insertAdjacentHTML(
-            "beforeend",
-            `<li class="list-value">${v[i]}</li>`
-          );
-        }
-        card.insertAdjacentHTML("beforeend", `<br><span class="key">Number of ${k} ${v.length}</span><hr><br>`);
-      } else {
-        card.insertAdjacentHTML(
-          "beforeend",`<span class="key">${k.replaceAll("_"," ")}:</span> <span class="val">${v}</span><br><hr>`);
-      }
-    }
+    singleCardShow();
     cardcontainerdetails.appendChild(card);
+
+      function singleCardShow() {
+          for (let [k, v] of Object.entries(data)) {
+              if (v == null) {
+                  card.insertAdjacentHTML("beforeend", `<span class="key">${k.replaceAll("_", " ")}:</span> <span class="val">N/A</span><br><hr>`);
+                  continue;
+              }
+
+              if (detailsIgnore.includes(k)) continue;
+
+              if (Array.isArray(v)) {
+
+                  ifCardIsArray(k, v);
+
+              } 
+              
+              else {
+                  card.insertAdjacentHTML(
+                      "beforeend", `<span class="key">${k.replaceAll("_", " ")}:</span> <span class="val">${v}</span><br><hr>`);
+              }
+
+          }
+
+          function ifCardIsArray(k, v) {
+              card.insertAdjacentHTML("beforeend", `<ul class="val">${k}</ul><br>`);
+              for (let i = 0; i < v.length; i++) {
+                  card.insertAdjacentHTML(
+                      "beforeend",
+                      `<li class="list-value">${v[i]}</li>`
+                  );
+              }
+              card.insertAdjacentHTML("beforeend", `<br><span class="key">Number of ${k} ${v.length}</span><hr><br>`);
+          }
+      }
   }
 
   function showData(data) {
