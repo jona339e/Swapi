@@ -1,4 +1,5 @@
 import { filterIgnore, detailsIgnore } from "./Modules/filter.js";
+import { getData } from "./Modules/fetcher.js";
 
 const swapiApp = (async function () {
   const SWAPIURL = "https://swapi.dev/api";
@@ -8,14 +9,12 @@ const swapiApp = (async function () {
 
   const btnContainer = document.querySelector(".btn-container");
 
-  try {
-    const response = await fetch(SWAPIURL);
-    const jsonData = await response.json();
+
+
+    const jsonData = await getData(SWAPIURL);
     createNavItems(jsonData);
     document.querySelectorAll(".nav-item")[2].click();
-  } catch (error) {
-    console.log(error);
-  }
+
 
   function createNavItems(jsonData) {
     for (let key in jsonData) {
@@ -132,10 +131,6 @@ const swapiApp = (async function () {
     });
   }
 
-  async function getData(url) {
-    const response = await fetch(url);
-    return await response.json();
-  }
 
   function deleteElements() {
     while (cardContainer.firstChild) {
