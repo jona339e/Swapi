@@ -1,6 +1,7 @@
 const filterIgnore = ['homeworld', 'films', 'species', 'vehicles', 'starships', 'created', 'edited', 'url',
  'residents', 'characters', 'planets', 'people', 'pilots'];
-export {filterIgnore} 
+ const detailsIgnore = ['created', 'edited', 'url']
+export {filterIgnore, detailsIgnore} 
 
 
 // Name: Luke Skywalker
