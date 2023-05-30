@@ -9,8 +9,6 @@ const swapiApp = (async function () {
 
   const btnContainer = document.querySelector(".btn-container");
 
-
-
     const jsonData = await getData(SWAPIURL);
     createNavItems(jsonData);
     document.querySelectorAll(".nav-item")[2].click();
